@@ -5,7 +5,7 @@ For a working example, view the code sandbox [here](https://codesandbox.io/p/dev
 
 **Example usage:**
 
-*Just feed the loading state into the LoadingOverlay using props, and place whatever visual loading elements you want to display in the center of the overlay, as children.*
+*Just feed the loading state into the LoadingOverlay using props, and place whatever visual elements you want to display in the center of the loading overlay, as children.*
 ```
 import { useState } from 'react';
 import LoadingOverlay from "./components/LoadingOverlay";
