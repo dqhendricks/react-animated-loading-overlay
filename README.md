@@ -1,5 +1,5 @@
 # react-animated-loading-overlay
-This JS react component will display an animated loading overlay and disable user input.
+This JS react component will display an animated loading overlay and disable user input. (TS version can be found [here](https://github.com/dqhendricks/react-animated-loading-overlay-ts))
 
 For a working example, view the code sandbox [here](https://codesandbox.io/p/devbox/react-animated-loading-overlay-x72dzk), or see below.
 
