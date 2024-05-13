@@ -1,39 +1,22 @@
 # react-animated-loading-overlay
 This JS react component will display an animated loading overlay and disable user input.
 
-For a working example, view the code sandbox [here](https://codesandbox.io/p/devbox/react-bootstrap-toast-queue-provider-8flm3m), or see below.
+For a working example, view the code sandbox [here](https://codesandbox.io/p/devbox/react-animated-loading-overlay-x72dzk), or see below.
 
 **Example usage:**
 
-*1) Wrap any children that need to use the Toast Queue Provider. Available props { postion, autohideDelay, maxToasts }.*
+*Just feed the loading state into the LoadingOverlay using props, and place whatever visual loading elements you want to display in the center of the overlay as children.*
 ```
-import ToastQueueProvider from "./components/ToastQueueProvider";
-import ExampleConsumer from "./components/ExampleConsumer";
+import { useState } from 'react';
+import LoadingOverlay from "./components/LoadingOverlay";
 
 export default function App() {
-  return (
-    <ToastQueueProvider>
-      <ExampleConsumer />
-    </ToastQueueProvider>
-  );
-}
-```
-
-*2) Child components may import and use context to gain access to `createToast({ title, body, autohide = true, bg = undefined })` function*
-```
-import { useContext } from "react";
-
-import { ToastQueueContext } from "./ToastQueueProvider";
-
-export default function ExampleConsumer() {
-  const { createToast } = useContext(ToastQueueContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <button
-      onClick={() => createToast({ title: "Success", body: "You have queued a toast!" })}
-    >
-      Create New Toast
-    </button>
+    <LoadingOverlay isLoading={isLoading}>
+      <p>Loading...</p>
+    </LoadingOverlay>
   );
 }
 ```
