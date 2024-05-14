@@ -24,7 +24,7 @@ function enableUserInput() {
   window.removeEventListener("mouseup", handleEvent);
 }
 
-export default function LoadingOverlayNew({ isLoading, children }) {
+export default function LoadingOverlay({ isLoading, children }) {
   const [status, setStatus] = useState("ready");
   const timer = useRef(0);
 
