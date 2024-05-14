@@ -26,7 +26,7 @@ function enableUserInput() {
 
 export default function LoadingOverlayNew({ isLoading, children }) {
   const [status, setStatus] = useState("ready");
-  const timer = useRef(null);
+  const timer = useRef(0);
 
   useEffect(() => {
     // this effect allows us to fade out the overlay before unmounting it
@@ -48,7 +48,7 @@ export default function LoadingOverlayNew({ isLoading, children }) {
     return () => {
       // ensure we clean up on dismount in case of page navigation
       enableUserInput();
-      clearTimeout(timer);
+      clearTimeout(timer.current);
     };
   }, []);
 
